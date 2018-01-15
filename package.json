@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0",
+    "react-static": "^4.8.4"
+  },
+  "devDependencies": {
+    "babel-preset-jsy": "^0.9.4",
+    "serve": "^6.1.0"
+  },
+  "babel": {
+    "presets": [
+      ["jsy", {
+        "stage_3": false,
+        "targets": {"browser": true},
+        "offside": {
+          "implicit_commas": true,
+          "check_blocks": "\\/dist\\/|\\/node_modules\\/|\\\\node_modules\\\\"}
+      }],
+      "react"
+    ],
+    "ignore": "app.static.js",
+    "plugins": [
+      "react-hot-loader/babel",
+      ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true,
+          "moduleName": "babel-runtime"
+        }]
+    ]
+  },
+  "scripts": {
+    "start": "react-static start",
+    "build": "react-static build",
+    "serve": "serve dist -p 3000"
+  }
+}
